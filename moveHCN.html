@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Di chuyển Hình chữ nhật</title>
+</head>
+<body>
+<a href="DiChuyen.html">Chuyển đến đi từ trái sang phải, gặp phải thì ngay lập tức chui ra từ bên trái và tiếp tục chạy</a>
+<img src="lumine.gif" id="lumine" style="position: absolute; left: 0; top: 0" height="100px" width="100px">
+<script>
+    let hdc = 'right'//Hướng di chuyển ban đầu
+    let s = 3
+    setInterval(()=>{
+        let lumine = document.getElementById('lumine')
+        if(hdc === 'right' && parseInt(lumine.style.left) < window.innerWidth - lumine.width){
+            lumine.style.left = parseInt(lumine.style.left)+ s+"px"
+        }else if(hdc === 'right'){
+            hdc = 'down'
+        }
+        if(hdc === 'down' && parseInt(lumine.style.top) < window.innerHeight - lumine.height){
+            lumine.style.top = parseInt(lumine.style.top)+s+"px"
+        }else if(hdc === 'down'){
+            hdc = 'left'
+        }
+        if(hdc === 'left' && parseInt(lumine.style.left) > 0){
+            lumine.style.left = parseInt(lumine.style.left)-s+"px"
+        }else if( hdc === "left"){
+            hdc = 'up'
+        }
+        if(hdc === 'up' && parseInt(lumine.style.top) > 0){
+            lumine.style.top = parseInt((lumine.style.top)) - s +"px"
+        }else if(hdc === 'up'){
+            hdc = 'right'
+        }
+
+    }, 10)
+</script>
+</body>
+</html>

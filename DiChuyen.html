@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Di Chuyển</title>
+</head>
+<body>
+<a href="moveHCN.html">Chuyển đến di chuyển theo hình chữ nhật</a>
+<img src="Traveller.png" id="traveller" style="position: absolute; left: -150px; top: 100px" width="100px" height="100px">
+
+<script>
+    let s = 3
+    setInterval(()=>{
+        let traveller = document.getElementById('traveller')
+        traveller.style.left = parseInt(traveller.style.left) + s + "px"
+        if (parseInt(traveller.style.left) >= window.innerWidth) {
+            traveller.style.left = -150 + "px"
+        }
+    }, 10)
+
+</script>
+</body>
+</html>
